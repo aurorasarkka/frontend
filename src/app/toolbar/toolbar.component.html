@@ -1,0 +1,21 @@
+<p>
+  <mat-toolbar>
+    <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+  </mat-toolbar>
+  <mat-menu #menu= "matMenu">
+    <a routerLink="/calculator" routerLinkActive="active">
+      Calculator
+    </a>
+    <br>
+    <a routerLink="/feedbackpage" routerLinkActive="active">
+      feedbackpage
+    </a>
+    <br>
+    <a routerLink="/form" routerLinkActive="active">
+      form
+    </a>
+  </mat-menu>
+</p>
