@@ -10,9 +10,9 @@ export class FeedbackpageComponent implements OnInit {
   formatLabel: any;
   questions: Array<Question> =
     [
-      new Question("Kysymys 1"),
-      new Question("Kysymys 2"),
-      new Question("Kysymys 3")
+      new Question("Millainen lehtipihvisi saisi olla?"),
+      new Question("Millaiseksi haluaisit ulkofileesi? "),
+      new Question("Entäs sisäfileesi? ")
     ];
 
   constructor() {

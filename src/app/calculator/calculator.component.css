@@ -2,7 +2,7 @@
   background: darkslategray;
   margin-top: 5vh;
   border: 3px solid black;
-  width: 30%;
+  width: 200%;
 }
 
 .maindisplay {
@@ -40,6 +40,8 @@
 
 .keys:hover {
   opacity: 1;
+
+
 }
 
 .ackey {
