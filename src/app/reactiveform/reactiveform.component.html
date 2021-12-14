@@ -1,0 +1,43 @@
+<form [formGroup]="profileForm"
+      (ngSubmit)="submitForm()">
+  <mat-form-field class="field-full-width">
+    <input matInput placeholder="first name" formControlName="firstName">
+    <mat-error *ngIf="firstName.hasError('required')"> pakollinen kenttä</mat-error>
+    <mat-error *ngIf="firstName.hasError('minlength')"> The minium lenght to this field
+      is {{profileForm.get('firstName').errors['minlength'].required}}</mat-error>
+    <mat-error *ngIf="firstName.hasError('pattern')">Must be valid name</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="field-full-width">
+    <input matInput placeholder="last name" formControlName="lastName">
+    <mat-error *ngIf="lastName.hasError('required')"> pakollinen kenttä</mat-error>
+    <mat-error *ngIf="lastName.hasError('minlength')"> The minium lenght to this field
+      is {{profileForm.get('lastName').errors['minlength'].required}}</mat-error>
+    <mat-error *ngIf="lastName.hasError('pattern')">Must be valid name</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="field-full-width">
+    <input matInput placeholder="password" formControlName="PassWord">
+    <mat-error *ngIf="PassWord.hasError('required')"> pakollinen kenttä</mat-error>
+    <mat-error *ngIf="PassWord.hasError('minlength')"> The minium lenght to this field
+      is {{profileForm.get('PassWord').errors['minlength'].required}}</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="field-full-width">
+    <input matInput placeholder="Email" formControlName="Email">
+    <mat-error *ngIf="Email.hasError('required')"> pakollinen kenttä</mat-error>
+    <mat-error *ngIf="Email.hasError('minlength')"> The minium lenght to this field
+      is {{profileForm.get('Email').errors['minlength'].required}}</mat-error>
+    <mat-error *ngIf="Email.hasError('pattern')">Must be valid name</mat-error>
+  </mat-form-field>
+
+  <div class="checkbox">
+    <label><input type="checkbox" required ngModel name=chechbox> Olen ymmärtänyt käyttäjäehdot</label>
+  </div>
+  <button type="submit" ng-model="button" [disabled]="false" class="btn btn-default">submit
+
+  </button>
+
+
+</form>
+

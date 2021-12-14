@@ -1,0 +1,18 @@
+<h1>Finnkino uutiset</h1>
+<input matInput placeholder="Kirjoita hakusana" [(ngModel)]="searchTerm">
+<!--<input matInput placeholder="Kirjoita hakusana" [(ngModel)]="searchTerm">
+<mat-icon matSuffix>find_in_page</mat-icon>-->
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let item of cinemaData$ | async | NewsFilter: searchTerm">
+    <!--| newsFilter: searchTerm-->
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ item.Title}}
+        {{item.PublishDate | date: "MM/dd/yy"}}
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+    {{ item.HTMLLead}}
+  </mat-expansion-panel>
+</mat-accordion>
+
