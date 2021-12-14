@@ -8,9 +8,9 @@
            required #name='ngModel' minlength="2" ngModel pattern="[a-zA-Z- ]*">
   </div>
   <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-    <p *ngIf="name.hasError('required')">Enter your first name!</p>
-    <p *ngIf="name.hasError('minlength')">Minimum 2 character required!</p>
-    <p *ngIf="name.hasError('pattern')">Name can contain only letters</p>
+    <p *ngIf="name.hasError('required')">Kirjoita etunimi!</p>
+    <p *ngIf="name.hasError('minlength')">Vähintään kaksi merkkiä vaaditaan!</p>
+    <p *ngIf="name.hasError('pattern')">Nimi saa sisältää ainoastaan kirjaimia</p>
   </div>
 
   <div class="form-group">
@@ -19,9 +19,9 @@
            #lastname='ngModel' required minlength="2" ngModel pattern="[a-zA-Z- ]*">
   </div>
   <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert alert-danger">
-    <p class="alert alert-danger" *ngIf="lastname.hasError('required')">Enter your last name!</p>
-    <p class="alert alert-danger" *ngIf="lastname.hasError('minlength')">Minimum 2 character required!</p>
-    <p *ngIf="name.hasError('pattern')">Name can contain only letters</p>
+    <p class="alert alert-danger" *ngIf="lastname.hasError('required')">Kirjoita sukunimi!</p>
+    <p class="alert alert-danger" *ngIf="lastname.hasError('minlength')">Vähintään 4 merkkiä vaaditaan!</p>
+    <p *ngIf="name.hasError('pattern')">Nimi saa sisältää ainoastaan kirjaimia</p>
   </div>
 
   <div class="form-group">
@@ -31,9 +31,8 @@
            pattern="^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d\+|\d\d-|[01]\dA)\d{3}[\dA-Z]$">
   </div>
   <div *ngIf="id.invalid && (id.dirty || id.touched)" class="alert alert-danger">
-    <p class="alert alert-danger" *ngIf="id.hasError('required')">Enter your personal identification number!</p>
-    <p class="alert alert-danger" *ngIf="id.hasError('minlength')">personal identification number contains 11
-      characters!</p>
+    <p class="alert alert-danger" *ngIf="id.hasError('required')">Kirjoita oma tunnistenumerosi!</p>
+    <p class="alert alert-danger" *ngIf="id.hasError('minlength')">Tunniste numero sisältää 11 merkkiä!</p>
   </div>
 
   <div class="form-group">
@@ -42,9 +41,9 @@
            required minlength="5" ngModel pattern="^\S+@\S+$">
   </div>
   <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-    <p class="alert alert-danger" *ngIf="email.hasError('required')">Enter your email address!</p>
-    <p class="alert alert-danger" *ngIf="email.hasError('minlength')">Give valid email!</p>
-    <p class="alert alert-danger" *ngIf="email.hasError('pattern')">invalid email address</p>
+    <p class="alert alert-danger" *ngIf="email.hasError('required')">Kirjoita sähköpostisi!</p>
+    <p class="alert alert-danger" *ngIf="email.hasError('minlength')">Anna voimassa oleva sähköposti!</p>
+    <p class="alert alert-danger" *ngIf="email.hasError('pattern')">Sähköposti ei sopiva</p>
   </div>
 
   <div class="form-group">
@@ -53,9 +52,8 @@
            required minlength="6">
   </div>
   <div *ngIf="user.invalid && (user.dirty || user.touched)" class="alert alert-danger">
-    <p class="alert alert-danger" *ngIf="user.hasError('required')">Enter your user name!</p>
-    <p class="alert alert-danger" *ngIf="user.hasError('minlength')">User name must contain atleast 6
-      characters!
+    <p class="alert alert-danger" *ngIf="user.hasError('required')">Anna käyttäjänimi!</p>
+    <p class="alert alert-danger" *ngIf="user.hasError('minlength')">Käyttäjä nimen on sisällettävä  6 merkkiä!
     </p>
   </div>
 
@@ -65,10 +63,10 @@
            #password='ngModel' required minlength="10" ngModel pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$">
   </div>
   <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
-    <p class="alert alert-danger" *ngIf="password.hasError('required')">Type your password here!</p>
-    <p class="alert alert-danger" *ngIf="password.hasError('minlength')">required minumum length 10 characters!
+    <p class="alert alert-danger" *ngIf="password.hasError('required')">kirjoita sähköposti!</p>
+    <p class="alert alert-danger" *ngIf="password.hasError('minlength')">Vaadittu määrä 10 merkkiä!
     </p>
-    <p *ngIf="password.hasError('pattern')">Password must contain numbers and capital letters!</p>
+    <p *ngIf="password.hasError('pattern')">Salasanan pitää sisältää numeroita ja isoja kirjaimia!</p>
   </div>
 
   <div class="form-group">
@@ -77,12 +75,12 @@
            #password2='ngModel' required ngModel pattern="{{password.value}}">
   </div>
   <div *ngIf="password2.invalid && (password2.dirty || password2.touched)" class="alert alert-danger">
-    <p class="alert alert-danger" *ngIf="password2.hasError('required')">Passwords don't match</p>
-    <p class="alert alert-danger" *ngIf="password2.hasError('pattern')">Password must match!</p>
+    <p class="alert alert-danger" *ngIf="password2.hasError('required')">Salasanat eivät täsmää</p>
+    <p class="alert alert-danger" *ngIf="password2.hasError('pattern')">Salasanat eivät täsmää!</p>
   </div>
 
   <div class="checkbox">
-    <label><input type="checkbox" required ngModel name=chechbox> I've read and understood the conditions</label>
+    <label><input type="checkbox" required ngModel name=chechbox> Olen ymmärtänyt käyttäjäehdot</label>
   </div>
   <button type="submit" ng-model="button" [disabled]="form1.invalid" class="btn btn-default"
           (click)="submit();form1.reset()">Submit</button>

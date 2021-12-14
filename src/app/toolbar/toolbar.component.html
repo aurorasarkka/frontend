@@ -1,21 +1,48 @@
-<p>
-  <mat-toolbar>
-    <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-  </mat-toolbar>
-  <mat-menu #menu= "matMenu">
-    <a routerLink="/calculator" routerLinkActive="active">
-      Calculator
-    </a>
-    <br>
-    <a routerLink="/feedbackpage" routerLinkActive="active">
-      feedbackpage
-    </a>
-    <br>
-    <a routerLink="/form" routerLinkActive="active">
-      form
-    </a>
-  </mat-menu>
-</p>
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <!--<span ngIf*="[userEmail$] | async"></span>-->
+  <div *ngIf="(userEmail$ | async)">{{userEmail$ | async}}
+    <button class="mat-stroked-button" (click)='logOut()'>{{logoutText}}</button>
+  </div>
+  <div *ngIf="!(userEmail$ | async)">
+    <button class="mat-stroked-button" (click)='login()'>{{loginText}}</button>
+  </div>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+</mat-toolbar>
+
+
+<mat-menu #menu="matMenu">
+  <a routerLink="/calculator" routerLinkActive="active">
+    Calculator
+  </a>
+  <br>
+  <a routerLink="/feedbackpage" routerLinkActive="active">
+    feedbackpage
+  </a>
+  <br>
+  <a routerLink="/form" routerLinkActive="active">
+    form
+  </a>
+  <br>
+  <a routerLink="/reactiveform" routerLinkActive="active">
+    reactiveform
+  </a>
+  <br>
+  <a routerLink="/cinema" routerLinkActive="active">
+    cinema
+  </a>
+  <br>
+  <a routerLink="/login" routerLinkActive="active">
+    login
+  </a>
+  <br>
+  <a routerLink="/tentti" routerLinkActive="active">
+  </a>
+</mat-menu>
+

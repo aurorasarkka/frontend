@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Form, FormControl, FormGroup, NgModel, Validators } from '@angular/forms';
-import { from } from 'rxjs';
-import { Person } from '../person';
+import {Component, Input, OnInit} from '@angular/core';
+import {Form, FormControl, FormGroup, NgModel, Validators} from '@angular/forms';
+import {from} from 'rxjs';
+import {Person} from '../person';
+
 
 @Component({
   selector: 'app-form',
@@ -21,9 +22,8 @@ export class FormComponent implements OnInit {
   }
 
 
-
   submit() {
-    console.log("User informatio:");
+    console.log("User information:");
     console.log('first name: ' + this.person.firstName);
     console.log('last name: ' + this.person.lastName);
     console.log('identification number: ' + this.person.id);
@@ -36,7 +36,6 @@ export class FormComponent implements OnInit {
     this.person.id = '';
     this.person.email = '';
     this.person.userName = '';
-
 
 
   }
